@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+    height: 100%;
+}
+
+body {
+    @apply bg-neutral-900 text-neutral-100 font-sans;
+}
+
+.hero {
+    padding: 4rem 2rem;
+}
