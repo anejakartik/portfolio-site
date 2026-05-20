@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </div>
                     <div className="space-x-3">
                         <a href="/Kartik_Aneja_Resume.pdf" className="px-3 py-2 bg-neutral-800 rounded text-sm">Download Resume</a>
-                        <a href="https://calendly.com/your-calendly" target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-blue-600 rounded text-sm">Schedule</a>
+                        <a href="/schedule" className="px-3 py-2 bg-blue-600 rounded text-sm">Schedule</a>
                     </div>
                 </div>
             </header>
