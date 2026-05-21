@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 
 export default function Hero() {
     return (
@@ -7,14 +6,9 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(34,197,94,0.10),transparent_24%)]" />
             <div className="relative z-10 max-w-3xl">
                 <span className="section-label">Boston, MA · AI Infrastructure · Backend · MLOps</span>
-                <motion.h1
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45 }}
-                    className="mt-6 text-5xl font-black tracking-tight text-white md:text-6xl"
-                >
+                <h1 className="mt-6 text-5xl font-black tracking-tight text-white md:text-6xl">
                     Kartik Aneja builds production AI systems that ship.
-                </motion.h1>
+                </h1>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-neutral-300">
                     AI-focused Software Engineer with 5+ years building scalable backend systems, MLOps infrastructure, streaming data platforms, and RAG workflows for startups and enterprise teams.
                 </p>
