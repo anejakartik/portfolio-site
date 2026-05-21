@@ -1,0 +1,59 @@
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+
+export default function CalendlyPopup({ url = 'https://calendly.com/your-calendly' }: { url?: string }) {
+    const [open, setOpen] = useState(false)
+
+    useEffect(() => {
+        const onEsc = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') setOpen(false)
+        }
+        window.addEventListener('keydown', onEsc)
+        return () => window.removeEventListener('keydown', onEsc)
+    }, [])
+
+    return (
+        <>
+            <button className="cta-button-secondary" onClick={() => setOpen(true)}>
+                Open scheduling modal
+            </button>
+            <AnimatePresence>
+                {open ? (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-10"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setOpen(false)}
+                    >
+                        <motion.div
+                            className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 shadow-2xl"
+                            initial={{ opacity: 0, scale: 0.96, y: 14 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.96, y: 14 }}
+                            transition={{ duration: 0.22 }}
+                            onClick={(event) => event.stopPropagation()}
+                        >
+                            <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                                <div>
+                                    <h3 className="text-lg font-semibold text-white">Schedule a quick chat</h3>
+                                    <p className="text-sm text-neutral-400">Calendly popup modal for recruiter and founder calls.</p>
+                                </div>
+                                <button className="text-neutral-400 hover:text-white" onClick={() => setOpen(false)} aria-label="Close scheduling modal">
+                                    ✕
+                                </button>
+                            </div>
+                            <iframe
+                                src={`${url}?embed_domain=portfolio&embed_type=PopupText`}
+                                width="100%"
+                                height="720"
+                                frameBorder="0"
+                                title="Schedule time"
+                            />
+                        </motion.div>
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+        </>
+    )
+}

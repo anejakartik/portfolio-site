@@ -9,9 +9,34 @@ body,
 }
 
 body {
-    @apply bg-neutral-900 text-neutral-100 font-sans;
+    @apply bg-neutral-950 text-neutral-100 font-sans;
+    background-image:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 24%),
+        linear-gradient(180deg, #0a0a0a 0%, #111827 100%);
+    background-attachment: fixed;
 }
 
 .hero {
     padding: 4rem 2rem;
+}
+
+.glass-card {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl;
+}
+
+.section-label {
+    @apply inline-flex items-center rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-200;
+}
+
+.cta-button {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition;
+}
+
+.cta-button-primary {
+    @apply cta-button bg-blue-500 text-white hover:bg-blue-400;
+}
+
+.cta-button-secondary {
+    @apply cta-button border border-white/10 bg-white/5 text-neutral-100 hover:bg-white/10;
 }
