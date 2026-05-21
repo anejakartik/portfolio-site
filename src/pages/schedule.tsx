@@ -7,7 +7,7 @@ export default function Schedule() {
         <Layout>
             <h2 className="text-2xl font-semibold">Schedule time with me</h2>
             <p className="text-neutral-400 mt-2">Choose a slot — Calendly embed below.</p>
-            <CalendlyEmbed url="https://calendly.com/your-calendly" />
+            <CalendlyEmbed url="https://calendly.com/anejakartik68/30min" />
         </Layout>
     )
 }

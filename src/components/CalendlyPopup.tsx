@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export default function CalendlyPopup({ url = 'https://calendly.com/your-calendly' }: { url?: string }) {
+export default function CalendlyPopup({ url = 'https://calendly.com/anejakartik68/30min' }: { url?: string }) {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {

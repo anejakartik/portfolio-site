@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CalendlyEmbed({ url = 'https://calendly.com/your-calendly' }: { url?: string }) {
+export default function CalendlyEmbed({ url = 'https://calendly.com/anejakartik68/30min' }: { url?: string }) {
     return (
         <div className="mt-6">
             <div id="calendly-embed" style={{ minHeight: '600px' }}>
