@@ -17,17 +17,12 @@ export default function CalendlyPopup({ url = 'https://calendly.com/anejakartik6
                 Open scheduling modal
             </button>
             {open ? (
-                <motion.div
+                <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
                     onClick={() => setOpen(false)}
                 >
-                    <motion.div
+                    <div
                         className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 shadow-2xl"
-                        initial={{ opacity: 0, scale: 0.96, y: 14 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ duration: 0.22 }}
                         onClick={(event) => event.stopPropagation()}
                     >
                         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
@@ -46,8 +41,8 @@ export default function CalendlyPopup({ url = 'https://calendly.com/anejakartik6
                             frameBorder="0"
                             title="Schedule time"
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             ) : null}
         </>
     )
